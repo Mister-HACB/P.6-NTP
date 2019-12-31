@@ -24,6 +24,9 @@
     <Compile Include="helpers.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MyNTP.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="NTP_mit_trio.py">
       <SubType>Code</SubType>
     </Compile>
