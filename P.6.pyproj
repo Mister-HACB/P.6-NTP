@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>10ddc307-0bc8-4d6a-a983-4f470cfbbe0b</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>P.6.py</StartupFile>
+    <StartupFile>NTP_GUI.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,10 +21,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="NTP_GUI.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="helpers.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="NTP_mit_trio.py">
+    <Compile Include="MyNTP.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ntplib.py" />
