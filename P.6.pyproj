@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="NTP_control.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="NTP_GUI.py">
       <SubType>Code</SubType>
     </Compile>
@@ -32,6 +35,12 @@
     </Compile>
     <Compile Include="ntplib.py" />
     <Compile Include="P.6.py" />
+    <Compile Include="Reste.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Versuch6.pdf" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

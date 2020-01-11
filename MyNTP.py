@@ -52,17 +52,17 @@ class MyNTP:
             zeitStart = time.time()
             verbindung.sendto(Paket, address_with_port) # Sendet das Packet an die Adresse
         except socket.gaierror:
-            print("Adress Error")
+            print("MyNTP Modul - Adress Error")
             return None
         except IOError:
-            print("IOError")
+            print("MyNTP Modul - IOError")
             return None
         verbindung.settimeout(5) # Stellt eine 5s verbindungs Timeout ein.
         try:
             antwort = verbindung.recv(buffer) # Erhalte Rückanwort, wartet blockierend bis Timeout
             zeitEnde = time.time()
         except socket.timeout:
-            print("Timeout Error")
+            print("MyNTP Modul - Timeout Error")
             return None
         verbindung.close() # schließt die Verbindung
         return antwort, zeitStart, zeitEnde
@@ -119,7 +119,7 @@ class MyNTP:
 
         # https://www.meinberg.de/german/info/ntp-packet.htm
         ergebnis = (T4-T1)-(T3-T2)
-        return ergebnis
+        return ergebnis #Timedelta-Typ
 
     @property
     def offset(self):
@@ -130,12 +130,9 @@ class MyNTP:
 
         # https://www.meinberg.de/german/info/ntp-packet.htm
         ergebnis = (T2 - T1)+(T3 - T4) / 2
+        return ergebnis #Timedelta-Typ
 
-        return ergebnis
-
-    @property
-    def offset_String(self):
-        offset_Timedelta = self.offset - self.delay
+    def Timedelta_String(offset_Timedelta):
 
         if(offset_Timedelta >= datetime.timedelta(0)):
             antwort = "Positiver "
